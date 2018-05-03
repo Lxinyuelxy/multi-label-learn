@@ -1,0 +1,67 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "Python Module",
+            "type": "python",
+            "request": "launch",
+            "stopOnEntry": true,
+            "pythonPath": "${config:python.pythonPath}",
+            "module": "module.name",
+            "cwd": "${workspaceFolder}",
+            "env": {},
+            "envFile": "${workspaceFolder}/.env",
+            "debugOptions": [
+                "RedirectOutput"
+            ]
+        },
+        {
+            "name": "Python Experimental: Current File (Integrated Terminal)",
+            "type": "pythonExperimental",
+            "request": "launch",
+            "pythonPath": "${config:python.pythonPath}",
+            "program": "${file}",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "env": {},
+            "envFile": "${workspaceFolder}/.env",
+            "debugOptions": [],
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "name": "Python Experimental: Django",
+            "type": "pythonExperimental",
+            "request": "launch",
+            "pythonPath": "${config:python.pythonPath}",
+            "program": "${workspaceFolder}/manage.py",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "env": {},
+            "envFile": "${workspaceFolder}/.env",
+            "args": [
+                "runserver",
+                "--noreload",
+                "--nothreading"
+            ],
+            "debugOptions": [],
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "name": "Python Experimental: Current File (External Terminal)",
+            "type": "pythonExperimental",
+            "request": "launch",
+            "pythonPath": "${config:python.pythonPath}",
+            "program": "${file}",
+            "cwd": "${workspaceFolder}",
+            "console": "externalTerminal",
+            "env": {},
+            "envFile": "${workspaceFolder}/.env",
+            "debugOptions": [],
+            "internalConsoleOptions": "neverOpen"
+        }
+    ]
+}
