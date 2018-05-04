@@ -4,17 +4,12 @@ from sklearn.model_selection import train_test_split
 from sklearn.multiclass import OneVsRestClassifier
 from sklearn.svm import SVC
 from sklearn.metrics import hamming_loss
-from sklearn.preprocessing import MultiLabelBinarizer
-from sklearn import datasets
-
-from os import sys, path
-sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
-
-from problem_transform.clr import CalibratedLabelRanking
-from problem_transform.cc import ClassifierChain
-from problem_transform.klabelsets import RandomKLabelsets
-from alg_adapt.mlknn import MLKNN
-from alg_adapt.mldt import MLDecisionTree
+from mllearn.problem_transform import BinaryRelevance
+from mllearn.problem_transform import CalibratedLabelRanking
+from mllearn.problem_transform import ClassifierChain
+from mllearn.problem_transform import RandomKLabelsets
+from mllearn.alg_adapt import MLKNN
+from mllearn.alg_adapt import MLDecisionTree
 
 X, y = make_multilabel_classification(n_samples=700,
                                       n_features = 80,
@@ -23,6 +18,11 @@ X, y = make_multilabel_classification(n_samples=700,
                                       allow_unlabeled=False,
                                       random_state=1)                                  
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
+
+classif = BinaryRelevance()
+classif.fit(X_train, y_train)
+predictions = classif.predict(X_test)
+print('The BinaryRelevance is %f' % hamming_loss(y_test, predictions))
 
 classif = ClassifierChain()
 classif.fit(X_train, y_train)

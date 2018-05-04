@@ -1,28 +1,20 @@
 import numpy as np
-from sklearn.datasets import make_multilabel_classification
-from sklearn.model_selection import train_test_split
 from sklearn.multiclass import OneVsRestClassifier
 from sklearn.svm import SVC
 from sklearn.metrics import hamming_loss
-from sklearn.preprocessing import MultiLabelBinarizer
-from sklearn import datasets
-
-# from os import sys, path
-# sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
-
 from mllearn.problem_transform import BinaryRelevance
-from problem_transform.clr import CalibratedLabelRanking
-from problem_transform.cc import ClassifierChain
-from problem_transform.klabelsets import RandomKLabelsets
-from alg_adapt.mlknn import MLKNN
-from alg_adapt.mldt import MLDecisionTree
+from mllearn.problem_transform import CalibratedLabelRanking
+from mllearn.problem_transform import ClassifierChain
+from mllearn.problem_transform import RandomKLabelsets
+from mllearn.alg_adapt import MLKNN
+from mllearn.alg_adapt import MLDecisionTree
 
 import arff
-train_data = arff.load(open('datasets/scene/scene-train.arff'))
+train_data = arff.load(open('datasets/scene-train.arff'))
 train_data = np.array(train_data['data'], dtype=float)
 X_train = train_data[:, :-6]
 y_train = train_data[:, -6:]
-test_data = arff.load(open('datasets/scene/scene-test.arff'))
+test_data = arff.load(open('datasets/scene-test.arff'))
 test_data = np.array(test_data['data'], dtype=float)
 X_test = test_data[:, :-6]
 y_test = test_data[:, -6:]
