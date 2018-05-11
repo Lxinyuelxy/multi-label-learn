@@ -4,7 +4,7 @@ from sklearn.svm import SVC
 from sklearn.preprocessing import MultiLabelBinarizer
 
 class CalibratedLabelRanking:
-    """CalibratedLabelRanking
+    """Calibratedn Label Ranking
     Reference Paper:
         Min-Ling Zhang and Zhi-Hua Zhou. A Review on Multi-Label Learning Algorithms
         Johannes Fürnkranz. Multilabel classification via calibrated label ranking
@@ -13,8 +13,8 @@ class CalibratedLabelRanking:
         self.classifier = classifier
 
     def fit(self, X, y):
-        self.label_count = y.shape[1]
         self.virtualLabel = y.shape[1]
+        self.label_count = y.shape[1]
         self.m = X.shape[0]
         self.X = X
         self.y = y
