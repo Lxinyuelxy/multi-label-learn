@@ -22,7 +22,6 @@ class MLDecisionTree:
         print('self.tree: ', self.tree)
 
     def create_tree(self, dataset, originFeatures):
-        print('============================')
         if dataset.shape[0] == 0:
             return
         # 递归返回情形1：得到的样本数量小于预先设定的阈值
