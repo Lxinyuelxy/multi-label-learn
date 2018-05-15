@@ -8,7 +8,7 @@ class MLDecisionTree:
     def __init__(self, leafSize = 10):
         self.leafSize = leafSize
    
-    def fit(self, X, y):
+    def fit(self, X, y, printTime=False, printTree=False):
         self.X = X
         self.y = y
         self.m = X.shape[0]
@@ -17,9 +17,10 @@ class MLDecisionTree:
 
         start_time = time.time()
         self.tree = self.create_tree(np.hstack((X, y)), np.arange(X.shape[1]))
-        print('the total of creat the tree: ', time.time() - start_time)
-
-        print('self.tree: ', self.tree)
+        if printTime:
+            print('the total of creat the tree: ', time.time() - start_time)
+        if printTree:
+            print('self.tree: ', self.tree)
 
     def create_tree(self, dataset, originFeatures):
         if dataset.shape[0] == 0:
