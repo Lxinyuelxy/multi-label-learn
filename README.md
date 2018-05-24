@@ -5,10 +5,15 @@ mlleran is a python library for multi-label classification bulti on scikit-learn
 ## Implementation
 The implementation is based on the paper [A Review on Multi-Label Learning Algorithms](https://ieeexplore.ieee.org/document/6471714/), and the implementated algorithms include:
 
+**Problem Transformation**
+
 - [x] Binary Relevance
 - [x] Classifier Chains
 - [x] Calibrated Label Ranking
 - [x] Random k-Labelsets
+
+**Algorithm Adaptation**
+
 - [x] Multi-Label k-Nearest Neighbor
 - [x] Multi-Label Decision Tree
 - [ ] Ranking Support Vector Machine
@@ -18,6 +23,7 @@ The implementation is based on the paper [A Review on Multi-Label Learning Algor
 ```bash
 pip install mllearn
 ```
+**Note: Support Python3 only.** 
 
 ## Data Format
 All data type shoud be `ndarray`, especially y should be binary format.For example, if your dataset totally have 5 labels and one of your sample has only first and last labels, then the corresponding output should be `[1, 0, 0, 0, 1]`.
