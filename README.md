@@ -10,8 +10,8 @@ The implementation is based on the paper [A Review on Multi-Label Learning Algor
 - [x] Calibrated Label Ranking
 - [x] Random k-Labelsets
 - [x] Multi-Label k-Nearest Neighbor
-- [x] Ranking Support Vector Machine
-- [ ] Multi-Label Decision Tree
+- [x] Multi-Label Decision Tree
+- [ ] Ranking Support Vector Machine
 - [ ] Collective Multi-Label Classifier
 
 ## Installation
