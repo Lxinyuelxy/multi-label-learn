@@ -26,7 +26,7 @@ pip install mllearn
 **Note: Support Python3 only.** 
 
 ## Data Format
-All data type shoud be `ndarray`, especially y should be binary format.For example, if your dataset totally have 5 labels and one of your sample has only first and last labels, then the corresponding output should be `[1, 0, 0, 0, 1]`.
+All data type should be `ndarray`, especially y should be the binary format. For example, if your dataset totally have 5 labels and one of your samples has only first and last labels, then the corresponding output should be `[1, 0, 0, 0, 1]`.
 ```python
 samples, features = X_train.shape
 samples, labels = y_train.shape
