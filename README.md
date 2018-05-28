@@ -33,6 +33,8 @@ samples, labels = y_train.shape
 samples_test, features = X_test.shape
 samples_test, labels = y_test.shape
 ```
+You can also find multi-label dataset provided by Mulan [here](http://mulan.sourceforge.net/datasets-mlc.html).
+
 ## Example Usage
 This library includes 2 parts, algorithms and metrics.
 ```python
