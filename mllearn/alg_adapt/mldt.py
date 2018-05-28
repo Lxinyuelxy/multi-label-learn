@@ -5,10 +5,12 @@ class MLDecisionTree:
     """
     not implement the pruning
     """
-    def __init__(self, leafSize = 10):
+    def __init__(self, leafSize = 10, printTime=False, printTree=False):
         self.leafSize = leafSize
+        self.printTime = printTime
+        self.printTree = printTree
    
-    def fit(self, X, y, printTime=False, printTree=False):
+    def fit(self, X, y):
         self.X = X
         self.y = y
         self.m = X.shape[0]
@@ -17,9 +19,9 @@ class MLDecisionTree:
 
         start_time = time.time()
         self.tree = self.create_tree(np.hstack((X, y)), np.arange(X.shape[1]))
-        if printTime:
+        if self.printTime:
             print('the total of creat the tree: ', time.time() - start_time)
-        if printTree:
+        if self.printTree:
             print('self.tree: ', self.tree)
 
     def create_tree(self, dataset, originFeatures):
