@@ -8,7 +8,7 @@ class RandomKLabelsets:
     Reference Paper:
         Min-Ling Zhang and Zhi-Hua Zhou. A Review on Multi-Label Learning Algorithms
     """
-    def __init__(self, classifier=SVC(kernel='linear')):
+    def __init__(self, classifier=SVC(kernel='rbf')):
         self.classifier = classifier
 
     def fit(self, X, y, k=3, n=0):

@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.svm import SVC
 
 class BinaryRelevance:
-    def __init__(self, classifier=SVC(kernel='linear')):
+    def __init__(self, classifier=SVC(kernel='rbf')):
         self.classifier = classifier
 
     def fit(self, X, y):

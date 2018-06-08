@@ -9,7 +9,7 @@ class CalibratedLabelRanking:
         Min-Ling Zhang and Zhi-Hua Zhou. A Review on Multi-Label Learning Algorithms
         Johannes Fürnkranz. Multilabel classification via calibrated label ranking
     """
-    def __init__(self, classifier=SVC(kernel='linear')):
+    def __init__(self, classifier=SVC(kernel='rbf')):
         self.classifier = classifier
 
     def fit(self, X, y):
